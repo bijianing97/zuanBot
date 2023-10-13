@@ -1,9 +1,8 @@
 from pykeyboard import PyKeyboard
 import pyperclip
-import requests
 import time
-import random
 import sqlite3
+import sys
 
 k = PyKeyboard()
 
@@ -26,9 +25,11 @@ if __name__ == "__main__":
         while True:
             c.execute('SELECT * FROM main ORDER BY RANDOM() limit 1')
             data = (c.fetchall())[0][1]
-            data1 = data.replace("妈", "🐴")
-            sendMsg(data1)
-            time.sleep(0.1)
+            data = data.replace("🐴", "女马")
+            data = data.replace("妈", "女马")
+            data = data.replace("🐎", "女马")
+            sendMsg(data)
+            time.sleep(1.2)
     except KeyboardInterrupt:
         print("exit,bye")
         conn.close()

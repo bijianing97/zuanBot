@@ -1,4 +1,3 @@
 pykeyboard
 PyUserInput
 pyperclip
-requests
